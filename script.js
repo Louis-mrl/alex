@@ -11,7 +11,7 @@ btn.addEventListener('click', (e) => {
     setInterval(() => {
         i++
         if (i===10) {
-            document.location.href='alex/page.html'
+            document.location.href='./page.html'
         }
     }, 100);
 })
