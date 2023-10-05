@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+#right_container {
+    width: 30%;
+    height: 100vh;
+    background-color: #A0816C;
+    color: white;
+}
+
+#top {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+h2 {
+    grid-column: 1 / span 2;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+#bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#bottom_t {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#bottom_b {
+    height: 50%;
+}
+
+#img_btn {
+    width: 50vw;
+/*     position: fixed;
+    top: 0;
+    right: 35%; */
+    /* transform: translate(50%); */
+    height: 100vh;
+}
+
+#photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#container_minimg {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    animation: loop 40s infinite linear;
+}
+
+.minimg {
+    width: 10vw;
+    height: 10vh;
+    object-fit: cover;
+    -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
+    filter: grayscale(100%); /* Firefox */
+    transition: 0.5s all;
+}
+
+.minimg:hover {
+    -webkit-filter: none; /* Pour les navigateurs Chrome, Safari, Opera */
+    filter: none; /* Firefox */
+}
+
+.img_visible, .img_pasvisible {
+    display: flex;
+    flex-direction: column;
+}
+
+#container_img_transition {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: calc(50% - 20vmin);
+    top: 50%;
+    transform: translate(0%, -50%); 
+    user-select: none;
+    z-index: -1;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.img_transition {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-filter: grayscale(100%); /* Pour les navigateurs Chrome, Safari, Opera */
+    filter: grayscale(100%); /* Firefox */
+}
+
+#transition {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: all 1s;
+}
+
+@keyframes loop {
+    0% {
+
+    }
+    100% {
+      transform: translateY(-200%); 
+    }
+  }
